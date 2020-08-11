@@ -1,0 +1,3 @@
+Explosion animations:  Artwork created by Luis Zuno (@ansimuz)
+Pixelated shader and script: https://unitylist.com/p/1l8/Unity-pixel-Shader
+Portal animation: https://gifimage.net/portal-gif/  (not used)
