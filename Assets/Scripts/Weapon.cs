@@ -4,9 +4,9 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
-    public GameObject FireRateLimitText;
+    public GameObject FireRateLimitAlert;
     private bool CanFire = true;
-    private int bullet_shooted = 0;
+    public static int bullet_shooted = 0;
     private int cooldowntime = 7;
     private int maxbulletallowed = 15;
 
@@ -22,7 +22,7 @@ public class Weapon : MonoBehaviour
     {
         if (CanFire)
         {
-            FireRateLimitText.SetActive(false);
+            FireRateLimitAlert.SetActive(false);
             if (Input.GetButtonDown("Fire1"))
             {
                 Shoot();
@@ -30,7 +30,7 @@ public class Weapon : MonoBehaviour
         }
         else
         {
-            FireRateLimitText.SetActive(true);
+            FireRateLimitAlert.SetActive(true);
 
         }
 
@@ -49,11 +49,11 @@ public class Weapon : MonoBehaviour
 
     private void ClearLimit()
     {
-        if (!CanFire) {
 
-            bullet_shooted = 0;
-            CanFire = true;
-        }
+        bullet_shooted = 0;
+        Ammos.slider.value = 0;
+        CanFire = true;
+
 
 
     }

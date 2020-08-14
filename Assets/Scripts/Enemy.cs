@@ -40,12 +40,12 @@ public class Enemy : MonoBehaviour {
         //Check if Enemy have reached base
         if (collision.gameObject.name == "Base") {
             Destroy (gameObject);
-            HealthUI.HealthLoss ();
+            Health.HealthLoss ();
 
         }
         if (collision.gameObject.name == "Player") {
             Destroy (gameObject);
-            HealthUI.HealthLoss ();
+            Health.HealthLoss ();
 
         }
 

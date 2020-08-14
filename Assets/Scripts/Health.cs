@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthUI : MonoBehaviour {
+public class Health : MonoBehaviour {
     public GameObject heart1;
     public GameObject heart2;
     public GameObject heart3;
