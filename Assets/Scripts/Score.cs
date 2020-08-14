@@ -8,17 +8,17 @@ public class Score : MonoBehaviour {
 
     void Start () {
         score = 0;
-        scoretext.text = "Punti: " + score.ToString ();
+        scoretext.text = "Score: " + score.ToString ();
     }
 
     //Change  text color based on score
     private void Update () {
 
-        scoretext.text = "Punti: " + score.ToString ();
+        scoretext.text = "Score: " + score.ToString ();
 
         if (score > 1500) {
             SpawnSystem.CanSpawnEnemy = false;
-            //Spawn boss
+ 
 
         }
 

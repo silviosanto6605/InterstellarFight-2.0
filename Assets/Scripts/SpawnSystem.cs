@@ -13,8 +13,8 @@ public class SpawnSystem : MonoBehaviour
     private void Start()
     {
         EnemyIncrease = true;
-        CanSpawnEnemy = false;
-        WaveCount = 20;
+        CanSpawnEnemy = true;
+        WaveCount = 0;
     }
 
     //Spawn enemy on random coordinates. Coordinates are regenerated for every Enemy instance
@@ -86,7 +86,7 @@ public class SpawnSystem : MonoBehaviour
             {
                 BossActive = true;
 
-                Instantiate(boss, Boss.BossStartPosition, Quaternion.identity);
+                Instantiate(boss, BigBoi.BossStartPosition, Quaternion.identity);
             }
 
         }

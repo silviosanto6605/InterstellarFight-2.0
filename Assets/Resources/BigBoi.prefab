@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 1564455367}
   - component: {fileID: 3280290858005871980}
   m_Layer: 0
-  m_Name: Boss
-  m_TagString: Boss
+  m_Name: BigBoi
+  m_TagString: Boss1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 0
 --- !u!114 &8751661394015636534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4809987113489608635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a716a4bcc29fb445bf2a92b92d87b56, type: 3}
+  m_Script: {fileID: 11500000, guid: fb4945d224c53ca41b75c67d133022fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &1564455367

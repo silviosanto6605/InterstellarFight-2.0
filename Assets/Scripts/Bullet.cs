@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour {
         }
 
         //self destroy if it goes out of the scene 
-        else if (collision.tag == "Boss")
+        else if (collision.tag == "BigBoi")
         {
             Destroy(gameObject);
         } 
