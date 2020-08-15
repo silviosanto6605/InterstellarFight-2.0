@@ -14,12 +14,14 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
 
-        //Clear bullet fire ratio
         InvokeRepeating("ClearLimit", 1, cooldowntime);
+
     }
 
     void Update()
     {
+
+
         if (CanFire)
         {
             FireRateLimitAlert.SetActive(false);
@@ -40,19 +42,26 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
+        if (!UIController.GameIsPaused) {
 
-        GetComponent<AudioSource>().Play();
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bullet_shooted += 1;
+            GetComponent<AudioSource>().Play();
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            bullet_shooted += 1;
+        }
+
 
     }
 
     private void ClearLimit()
     {
+        if (!CanFire) {
 
-        bullet_shooted = 0;
-        Ammos.slider.value = 0;
-        CanFire = true;
+            bullet_shooted = 0;
+            Ammos.slider.value = 0;
+            CanFire = true;
+
+        }
+
 
 
 
@@ -66,7 +75,6 @@ public class Weapon : MonoBehaviour
         {
 
             CanFire = false;
-            Debug.Log("not allowed to do that");
 
         }
 
