@@ -27,16 +27,16 @@ public class Player : MonoBehaviour
             topborder.GetComponent<BoxCollider2D>().enabled = false;
             botborder.GetComponent<BoxCollider2D>().enabled = false;
 
-            if (gameObject.transform.position.y > 8.83)
+            if (gameObject.transform.position.y > 9)
             {
-                transform.position -= new Vector3(0, 15.76f, 0);
+                transform.position -= new Vector3(0, 17.5f, 0);
 
 
 
             }
-            else if (gameObject.transform.position.y < -8.08)
+            else if (gameObject.transform.position.y < -8.2)
             {
-                transform.position += new Vector3(0, 15.76f, 0);
+                transform.position += new Vector3(0, 17.5f, 0);
 
             }
 

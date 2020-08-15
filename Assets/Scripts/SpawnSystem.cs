@@ -14,7 +14,7 @@ public class SpawnSystem : MonoBehaviour
     {
         EnemyIncrease = true;
         CanSpawnEnemy = false;
-        WaveCount = 0;
+        WaveCount = 21;
     }
 
     //Spawn enemy on random coordinates. Coordinates are regenerated for every Enemy instance

@@ -1,22 +1,21 @@
-﻿using JetBrains.Annotations;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.Mathematics;
-using UnityEngine;
-using UnityEngine.PlayerLoop;
+﻿using UnityEngine;
 
 public class BigBoi : MonoBehaviour
 {
 
 
-    public static Vector3 BossStartPosition = new Vector3(16.6f,0,0);
+    public static Vector3 BossStartPosition = new Vector3(16.6f, 0, 0);
 
     private Animator anim;
     private bool startanimplayed = false;
+    private readonly bool CanFire = true;
+    public GameObject MissilePrefab;
+    public GameObject FirePoint;
 
-    private void Start(){
+
+
+    private void Start()
+    {
 
         anim = GetComponent<Animator>();
     }
@@ -24,13 +23,15 @@ public class BigBoi : MonoBehaviour
     private void Update()
     {
 
-        
 
-        if (!startanimplayed) {
+
+        if (!startanimplayed)
+        {
 
             //if animation is played destroy animator, in order to make the boss move
-            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1) {
-                Destroy(anim);
+            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+            {
+                anim.StopPlayback();
                 Invoke("Attack", 3);
                 startanimplayed = true;
 
@@ -41,13 +42,14 @@ public class BigBoi : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("attacco");
-        Invoke("Attack", UnityEngine.Random.Range(1,5));
+
+        Instantiate(MissilePrefab, FirePoint.transform.position , Missile.MissileRotation );
+        Invoke("Attack", UnityEngine.Random.Range(0, 5));
 
     }
 
 
-  
+
 
 
 
