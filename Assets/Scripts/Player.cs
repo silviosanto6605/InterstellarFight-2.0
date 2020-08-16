@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D body;
-    public static int health = 3;
+    public static int health = 150;
     float vertical;
     public static bool PacmanEffect = true;
     public GameObject topborder;

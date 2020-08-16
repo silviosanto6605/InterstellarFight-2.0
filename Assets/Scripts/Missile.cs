@@ -4,7 +4,7 @@ using UnityEngine.PlayerLoop;
 public class Missile : MonoBehaviour
 {
 
-    public float speed = -20f;
+    public float speed = -8f;
     private Rigidbody2D rb;
 
     public static Quaternion MissileRotation = new Quaternion(0, 0, 90, 0);

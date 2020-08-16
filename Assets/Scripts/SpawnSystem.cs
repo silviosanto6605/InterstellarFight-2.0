@@ -7,14 +7,15 @@ public class SpawnSystem : MonoBehaviour
     public static int WaveCount;
     private bool EnemyIncrease;
     public GameObject boss;
+    public static bool SpawnHorde = false;
     private bool BossActive = false;
 
     //Spawn one enemy
     private void Start()
     {
-        EnemyIncrease = true;
+        EnemyIncrease = false;
         CanSpawnEnemy = false;
-        WaveCount = 21;
+        WaveCount = 25;
     }
 
     //Spawn enemy on random coordinates. Coordinates are regenerated for every Enemy instance
@@ -87,11 +88,27 @@ public class SpawnSystem : MonoBehaviour
                 BossActive = true;
 
                 Instantiate(boss, BigBoi.BossStartPosition, Quaternion.identity);
+
+                
+
+
+
+
+
+
+
             }
 
         }
 
+        if (SpawnHorde)
+        {
 
+            Spawn(Random.Range(3, 6));
+            SpawnHorde = false;
+
+
+        }
 
     }
 }

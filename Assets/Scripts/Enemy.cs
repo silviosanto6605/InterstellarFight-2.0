@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public static float EnemySpeed = 3;
+    public static float EnemySpeed = 5;
     private Rigidbody2D rb;
     private Animator anim;
     public static bool isEnemyDead;
@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
         isEnemyDead = false;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
 
     }
 

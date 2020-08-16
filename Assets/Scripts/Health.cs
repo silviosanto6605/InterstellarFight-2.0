@@ -26,8 +26,8 @@ public class Health : MonoBehaviour {
 
     void Update () {
         //Health check
-        if (Player.health > 3)
-            Player.health = 3;
+        /*if (Player.health > 3)
+            Player.health = 3;*/
 
         switch (Player.health) {
             case 3:
