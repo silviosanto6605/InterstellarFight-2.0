@@ -30,15 +30,25 @@ public class Bullet : MonoBehaviour {
 
         }
 
-        //self destroy if it goes out of the scene 
-        else if (collision.tag == "BigBoi")
-        {
-            Destroy(gameObject);
-        } 
+
         else if (collision.name == "OutOfScene")
         {
             Destroy(gameObject);
         }
+
+        else if (collision.tag == "Missile")
+        {
+
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
+        else if (collision.tag == "Boss1")
+        {
+            Destroy(gameObject);
+            /* reduce boss health*/
+        }
+
 
 
     }

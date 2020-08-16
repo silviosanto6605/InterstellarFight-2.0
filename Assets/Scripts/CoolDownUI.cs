@@ -2,7 +2,7 @@
 using UnityEngine;
 using Slider = UnityEngine.UI.Slider;
 
-public class Ammos : MonoBehaviour
+public class CoolDownUI : MonoBehaviour
 {
     public static Slider slider;
 

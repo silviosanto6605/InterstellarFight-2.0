@@ -57,7 +57,7 @@ public class Weapon : MonoBehaviour
         if (!CanFire) {
 
             bullet_shooted = 0;
-            Ammos.slider.value = 0;
+            CoolDownUI.slider.value = 0;
             CanFire = true;
 
         }

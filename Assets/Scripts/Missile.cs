@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class Missile : MonoBehaviour
 {
@@ -25,8 +26,16 @@ public class Missile : MonoBehaviour
 
         }
 
-
+        else if (collision.gameObject.name == "Base")
+        {
+            Destroy(gameObject);
+            Health.HealthLoss();
+            
+        }
     }
+
+
+
 
 }
 
