@@ -10,6 +10,7 @@ public class CoolDownUI : MonoBehaviour
     void Start() {
 
         slider = GetComponent<Slider>();
+        slider.maxValue = Weapon.maxbulletallowed;
        
     
     }
@@ -21,5 +22,6 @@ public class CoolDownUI : MonoBehaviour
         slider.value = Weapon.bullet_shooted;
   
     }
+
 
 }

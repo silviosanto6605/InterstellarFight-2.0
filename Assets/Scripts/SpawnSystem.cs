@@ -13,9 +13,9 @@ public class SpawnSystem : MonoBehaviour
     //Spawn one enemy
     private void Start()
     {
-        EnemyIncrease = false;
-        CanSpawnEnemy = false;
-        WaveCount = 25;
+        EnemyIncrease = true;
+        CanSpawnEnemy = true;
+        WaveCount = 0;
     }
 
     //Spawn enemy on random coordinates. Coordinates are regenerated for every Enemy instance
@@ -45,8 +45,8 @@ public class SpawnSystem : MonoBehaviour
                 if (EnemyIncrease)
                 {
                     WaveCount += 1;
-                    Spawn(WaveCount);
                 }
+
 
                 //if on wave 14 disable enemy increase
                 if (WaveCount >= 14)
@@ -62,12 +62,13 @@ public class SpawnSystem : MonoBehaviour
                 //then increase enemy and player speed
                 if (!EnemyIncrease && WaveCount < 20)
                 {
-                    Spawn(WaveCount);
                     Player.runSpeed += 1;
                     Enemy.EnemySpeed += 0.25f;
 
                 }
 
+
+                Spawn(WaveCount);
 
 
 
@@ -86,10 +87,10 @@ public class SpawnSystem : MonoBehaviour
             if (!BossActive)
             {
                 BossActive = true;
-
+                Weapon.maxbulletallowed = 30;
                 Instantiate(boss, BigBoi.BossStartPosition, Quaternion.identity);
 
-                
+
 
 
 
@@ -103,9 +104,12 @@ public class SpawnSystem : MonoBehaviour
 
         if (SpawnHorde)
         {
+            if (FindObjectOfType<Enemy>() == null)
+            {
+                Spawn(Random.Range(3, 6));
+                SpawnHorde = false;
+            }
 
-            Spawn(Random.Range(3, 6));
-            SpawnHorde = false;
 
 
         }

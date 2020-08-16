@@ -7,8 +7,8 @@ public class Weapon : MonoBehaviour
     public GameObject FireRateLimitAlert;
     private bool CanFire = true;
     public static int bullet_shooted = 0;
-    private int cooldowntime = 7;
-    private int maxbulletallowed = 15;
+    private readonly int cooldowntime = 7;
+    public static int maxbulletallowed = 15;
 
 
     private void Start()
@@ -42,7 +42,8 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        if (!UIController.GameIsPaused) {
+        if (!UIController.GameIsPaused)
+        {
 
             GetComponent<AudioSource>().Play();
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -54,7 +55,8 @@ public class Weapon : MonoBehaviour
 
     private void ClearLimit()
     {
-        if (!CanFire) {
+        if (!CanFire)
+        {
 
             bullet_shooted = 0;
             CoolDownUI.slider.value = 0;
