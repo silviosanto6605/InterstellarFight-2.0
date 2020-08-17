@@ -13,8 +13,8 @@ public class SpawnSystem : MonoBehaviour
     //Spawn one enemy
     private void Start()
     {
-        EnemyIncrease = true;
-        CanSpawnEnemy = true;
+        EnemyIncrease = false;
+        CanSpawnEnemy = false;
         WaveCount = 0;
     }
 
@@ -113,6 +113,9 @@ public class SpawnSystem : MonoBehaviour
 
 
         }
+
+
+
 
     }
 }

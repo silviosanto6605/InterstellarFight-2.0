@@ -37,12 +37,13 @@ public class Bullet : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        else if (collision.tag == "Missile")
+        else if (collision.tag == "BossBullets")
         {
 
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
+
 
         else if (collision.tag == "Boss1")
         {

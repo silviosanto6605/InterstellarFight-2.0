@@ -7,7 +7,7 @@ TagManager:
   - Enemy
   - Border
   - Boss1
-  - Missile
+  - BossBullets
   layers:
   - Default
   - TransparentFX

@@ -26,7 +26,7 @@ public class Missile : MonoBehaviour
 
         }
 
-        else if (collision.gameObject.name == "Base")
+        else if (collision.gameObject.tag == "Border")
         {
             Destroy(gameObject);
             Health.HealthLoss();

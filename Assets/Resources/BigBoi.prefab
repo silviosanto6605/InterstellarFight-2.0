@@ -152,7 +152,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissilePrefab: {fileID: 8774239153357066302, guid: 0b3d9d30088d410498233e9c1a635a87,
     type: 3}
+  BombPrefab: {fileID: 3032011427694821023, guid: b50935a14ae3c514c8f89266126021ec,
+    type: 3}
   FirePoint: {fileID: 266193245}
+  enemy: {fileID: 3172141767042375034, guid: 0a64b00677be7cb4fa4445385bf4769b, type: 3}
 --- !u!95 &1564455367
 Animator:
   serializedVersion: 3

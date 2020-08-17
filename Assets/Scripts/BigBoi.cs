@@ -9,6 +9,7 @@ public class BigBoi : MonoBehaviour
     private Animator anim;
     private bool startanimplayed = false;
     public GameObject MissilePrefab;
+    public GameObject BombPrefab;
     public GameObject FirePoint;
     public GameObject enemy;
 
@@ -45,7 +46,7 @@ public class BigBoi : MonoBehaviour
 
 
 
-        int RandomAttack = Random.Range(1, 3);
+        int RandomAttack = Random.Range(1, 4);
         void ShootMissiles()
         {
             if (FindObjectOfType<Missile>() == null)
@@ -65,6 +66,24 @@ public class BigBoi : MonoBehaviour
 
         }
 
+        void LaunchBombs() {
+
+            if (FindObjectOfType<Bomb>() == null)
+            {
+                for (int x = 0; x < Random.Range(2, 5); x++)
+                {
+                    float RandX = Random.Range(3, 12);
+                    float RandY = Random.Range(-4, 6);
+                    Vector2 whereToSpawn = new Vector2(RandX, RandY);
+                    Instantiate(BombPrefab, whereToSpawn, Quaternion.identity);
+
+
+
+                }
+            }
+        }
+
+
         switch (RandomAttack)
         {
 
@@ -79,6 +98,8 @@ public class BigBoi : MonoBehaviour
 
 
             case 3:
+
+                LaunchBombs();
                 break;
 
 
