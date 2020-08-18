@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
     Rigidbody2D body;
     public static int health = 150;
     float vertical;
+    float horizontal;
     public static bool PacmanEffect = true;
     public GameObject topborder;
     public GameObject botborder;
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
 
         if (PacmanEffect)
         {

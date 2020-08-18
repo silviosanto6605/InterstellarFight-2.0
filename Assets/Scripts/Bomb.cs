@@ -14,7 +14,7 @@ public class Bomb : MonoBehaviour
     private Animation explosion;
     private Animator anim;
     private Rigidbody2D rb;
-    private float timer = 3f;
+    private float timer = 5f;
 
     void Start()
     {
@@ -27,20 +27,24 @@ public class Bomb : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 direction = (Vector2)target.position - rb.position;
+        if (GetComponent<Rigidbody2D>() != null)
+        {
+            Vector2 direction = (Vector2) target.position - rb.position;
 
-        direction.Normalize();
+            direction.Normalize();
 
-        float rotateAmount = Vector3.Cross(direction, transform.up).z;
+            float rotateAmount = Vector3.Cross(direction, transform.up).z;
 
-        rb.angularVelocity = -rotateAmount * rotateSpeed;
+            rb.angularVelocity = -rotateAmount * rotateSpeed;
 
-        rb.velocity = transform.up * speed;
+            rb.velocity = transform.up * speed;
+        }
     }
 
     void OnCollisionEnter2D()
     {
         explode();
+        Health.HealthLoss();
        
     }
 
@@ -53,9 +57,9 @@ public class Bomb : MonoBehaviour
 
     void explode()
     {
-        GetComponent<Animator>().SetBool("TimerEnded", true);
-        Destroy(GetComponent<CircleCollider2D>());
-        Destroy(GetComponent<Rigidbody2D>());
+        gameObject.GetComponent<Animator>().SetBool("TimerEnded", true);
+        Destroy(gameObject.GetComponent<CircleCollider2D>());
+        Destroy(gameObject.GetComponent<Rigidbody2D>());
         Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length + 0f);
     }
 
