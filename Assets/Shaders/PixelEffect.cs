@@ -10,32 +10,30 @@ namespace Codexus
     {
         public Shader PixelShader;
 
-        [Header("Pixels size")]
-        [Range(1.0f, 20f)]
+        [Header("Pixels size")] [Range(1.0f, 20f)]
         public float pixelWidth = 0.05f;
-        [Range(1.0f, 20f)]
-        public float pixelHeight = 0.05f;
+
+        [Range(1.0f, 20f)] public float pixelHeight = 0.05f;
 
         private Material pixelMaterial = null;
 
-        void SetMaterial()
+        private void SetMaterial()
         {
             pixelMaterial = new Material(PixelShader);
         }
 
-        void OnEnable()
+        private void OnEnable()
         {
             SetMaterial();
         }
 
-        void OnDisable()
+        private void OnDisable()
         {
             pixelMaterial = null;
         }
 
-        void OnRenderImage(RenderTexture source, RenderTexture destination)
+        private void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
-
             if (pixelMaterial == null)
             {
                 Graphics.Blit(source, destination);
@@ -50,5 +48,4 @@ namespace Codexus
             Graphics.Blit(source, destination, pixelMaterial);
         }
     }
-
 }

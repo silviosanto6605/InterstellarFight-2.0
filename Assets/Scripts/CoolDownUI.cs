@@ -1,27 +1,20 @@
-﻿using JetBrains.Annotations;
-using UnityEngine;
-using Slider = UnityEngine.UI.Slider;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class CoolDownUI : MonoBehaviour
 {
     public static Slider slider;
 
 
-    void Start() {
-
+    private void Start()
+    {
         slider = GetComponent<Slider>();
         slider.maxValue = Weapon.maxbulletallowed;
-       
-    
     }
 
 
-
-    void Update() {
-
+    private void Update()
+    {
         slider.value = Weapon.bullet_shooted;
-  
     }
-
-
 }
