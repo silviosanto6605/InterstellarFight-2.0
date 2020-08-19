@@ -3,7 +3,7 @@
 public class Missile : MonoBehaviour
 {
     public static Quaternion MissileRotation = new Quaternion(0, 0, 90, 0);
-    public float speed = -8f;
+    public float speed = -5f;
     private Rigidbody2D rb;
 
 
@@ -17,14 +17,21 @@ public class Missile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            Explode();
             Health.HealthLoss();
         }
 
         else if (collision.gameObject.tag == "Border")
         {
-            Destroy(gameObject);
+            Explode();
             Health.HealthLoss();
         }
+    }
+
+    public void Explode()
+    {
+        GetComponent<Animator>().SetBool("isDestroyed", true);
+        Destroy(gameObject, GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0f);
+        Destroy(gameObject);
     }
 }

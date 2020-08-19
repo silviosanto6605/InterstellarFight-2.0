@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public static float EnemySpeed = 5;
+    public static float EnemySpeed = 2;
 
     public static bool isEnemyDead;
     private Animator anim;
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
         //Check if Enemy is colliding with another Enemy instance 
         if (collision.gameObject.tag == "Enemy")
         {
-            float RandX = Random.Range(3, 12);
+            float RandX = Random.Range(3, 18);
             float RandY = Random.Range(-4, 6);
             var whereToSpawn = new Vector2(RandX, RandY);
             transform.position = whereToSpawn;

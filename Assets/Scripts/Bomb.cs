@@ -6,12 +6,12 @@ public class Bomb : MonoBehaviour
     // ReSharper disable  Unity.PerformanceCriticalCodeInvocation
 
     private Transform target;
-    private readonly float speed = 3f;
+    private readonly float speed = 5f;
     private readonly float rotateSpeed = 200f;
     private Animation explosion;
     private Animator anim;
     private Rigidbody2D rb;
-    private readonly float timer = 5f;
+    public static float timer = 5f;
 
     private void Start()
     {
@@ -50,7 +50,7 @@ public class Bomb : MonoBehaviour
         explode();
     }
 
-    private void explode()
+    public void explode()
     {
         gameObject.GetComponent<Animator>().SetBool("TimerEnded", true);
         Destroy(gameObject.GetComponent<CircleCollider2D>());

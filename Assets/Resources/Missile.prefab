@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8933560386543636261}
   - component: {fileID: 4086934844821120493}
   - component: {fileID: 1018952844808982083}
+  - component: {fileID: 1418055332}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Missile
@@ -152,3 +153,22 @@ PolygonCollider2D:
       - {x: 0.53, y: -0.07}
       - {x: 0.53, y: 0.02}
       - {x: 0.44, y: 0.17}
+--- !u!95 &1418055332
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8774239153357066302}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ccb0dd20fbc0c4945adfe4f75534a2da, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

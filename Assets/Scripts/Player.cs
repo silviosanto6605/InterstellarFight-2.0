@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static int health = 150;
+    public static long health = 99999999999;
     public static bool PacmanEffect = true;
     public static float runSpeed;
     public GameObject topborder;
@@ -20,9 +20,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-
-
-
         vertical = Input.GetAxisRaw("Vertical");
         horizontal = Input.GetAxisRaw("Horizontal");
 

@@ -3,7 +3,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public static int bullet_shooted;
-    public static int maxbulletallowed = 25 ;
+    public static int maxbulletallowed = 25;
     public Transform firePoint;
     public GameObject bulletPrefab;
     public GameObject FireRateLimitAlert;
@@ -21,11 +21,10 @@ public class Weapon : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F1))
         {
             bullet_shooted = maxbulletallowed;
-            Invoke("Reload",3);
-
+            Invoke("Reload", 3);
         }
-        
-        
+
+
         if (CanFire)
         {
             FireRateLimitAlert.SetActive(false);
@@ -39,16 +38,17 @@ public class Weapon : MonoBehaviour
         StopFiring();
     }
 
-    private void Shoot()
+    public void Shoot()
     {
-        if (!UIController.GameIsPaused) {
+        if (!UIController.GameIsPaused)
+        {
             GetComponent<AudioSource>().Play();
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             bullet_shooted += 1;
         }
     }
 
-    void Reload()
+    public void Reload()
     {
         if (!CanFire)
         {
