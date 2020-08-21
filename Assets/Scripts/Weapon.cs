@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public static int bullet_shooted;
+    public static int bullet_shooted = 0;
     public static int maxbulletallowed = 25;
     public Transform firePoint;
     public GameObject bulletPrefab;
@@ -10,14 +11,18 @@ public class Weapon : MonoBehaviour
     private readonly int cooldowntime = 7;
     private bool CanFire = true;
 
-
-    private void Start()
-    {
-        InvokeRepeating("Reload", 1, cooldowntime);
-    }
+    
 
     private void Update()
     {
+        if (bullet_shooted<0)
+        {
+            bullet_shooted = 0;
+        }
+        
+        
+        Debug.Log("SPARATI: "+bullet_shooted.ToString()+ "  MASSIMI:"+maxbulletallowed.ToString());
+
         if (Input.GetKeyDown(KeyCode.F1))
         {
             bullet_shooted = maxbulletallowed;
@@ -53,13 +58,18 @@ public class Weapon : MonoBehaviour
         if (!CanFire)
         {
             bullet_shooted = 0;
-            CoolDownUI.slider.value = 0;
+            CoolDownUI.bulletshootedSlider.value = 0;
             CanFire = true;
         }
     }
 
     private void StopFiring()
     {
-        if (bullet_shooted >= maxbulletallowed) CanFire = false;
+        if (bullet_shooted >= maxbulletallowed)
+        {
+            CanFire = false;
+            Invoke("Reload",cooldowntime);
+        }
+        
     }
 }

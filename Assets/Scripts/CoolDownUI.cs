@@ -3,18 +3,18 @@ using UnityEngine.UI;
 
 public class CoolDownUI : MonoBehaviour
 {
-    public static Slider slider;
+    public static Slider bulletshootedSlider;
 
-
+    
     private void Start()
     {
-        slider = GetComponent<Slider>();
-        slider.maxValue = Weapon.maxbulletallowed;
+        bulletshootedSlider = GetComponent<Slider>();
+        bulletshootedSlider.maxValue = Weapon.maxbulletallowed;
     }
 
 
     private void Update()
     {
-        slider.value = Weapon.bullet_shooted;
+        bulletshootedSlider.value = Weapon.bullet_shooted;
     }
 }
