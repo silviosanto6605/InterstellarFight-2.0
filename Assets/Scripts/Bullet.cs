@@ -51,7 +51,7 @@ public class Bullet : MonoBehaviour
         else if (collision.tag == "Boss1")
         {
             Destroy(gameObject);
-            /* reduce boss health*/
+            Boss1.BossHealth -= 10;
         }
     }
 

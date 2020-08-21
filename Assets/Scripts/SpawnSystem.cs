@@ -9,15 +9,15 @@ public class SpawnSystem : MonoBehaviour
     public static bool SpawnHorde;
     public GameObject enemy;
     public GameObject boss;
-    private bool bossactive = false;
+    public static bool bossactive = false;
     private bool EnemyIncrease;
 
     //SpawnEnemy one enemy
     private void Start()
     {
         EnemyIncrease = true;
-        CanSpawnEnemy = false;
-        enemyCount = 25;
+        CanSpawnEnemy = true;
+        enemyCount = 19;
         WaveCount = enemyCount;
     }
 
@@ -43,7 +43,7 @@ public class SpawnSystem : MonoBehaviour
                 {
                     
                     Weapon.maxbulletallowed = 35;
-                    Instantiate(boss, BigBoi.BossStartPosition, Quaternion.identity);
+                    Instantiate(boss, Boss1.BossStartPosition, Quaternion.identity);
                     bossactive = true;
                 }
 

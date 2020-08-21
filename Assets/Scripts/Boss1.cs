@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 
-public class BigBoi : MonoBehaviour
+public class Boss1 : MonoBehaviour
 {
     public static Vector3 BossStartPosition = new Vector3(16.6f, 0, 0);
     public GameObject MissilePrefab;
     public GameObject BombPrefab;
     public GameObject FirePoint;
     public GameObject enemy;
-
+    public static int BossHealth;
+    public static int MaxHealth = 1000;
     private Animator anim;
     private bool startanimplayed;
 
@@ -15,10 +16,19 @@ public class BigBoi : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+        BossHealth = MaxHealth;
     }
 
     private void Update()
     {
+
+        if (BossHealth <= 0)
+        {
+            Destroy(gameObject);
+            // destruction
+        }
+
+
         if (!startanimplayed)
             //if animation is played destroy animator, in order to make the boss move
             if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)

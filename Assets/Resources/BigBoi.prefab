@@ -64,9 +64,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30, y: 164}
-  m_SizeDelta: {x: 144.02133, y: 40.656784}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 18.4, y: 166}
+  m_SizeDelta: {x: 278.3475, y: 40.656784}
+  m_Pivot: {x: 0.49999997, y: 0.56620646}
 --- !u!222 &746963915
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 72
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -191,8 +191,8 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_MaxValue: 500
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 8751661394015636534}
   - component: {fileID: 1564455367}
   - component: {fileID: 3280290858005871980}
+  - component: {fileID: 7567881188157114439}
   m_Layer: 0
   m_Name: BigBoi
   m_TagString: Boss1
@@ -484,6 +485,20 @@ PolygonCollider2D:
       - {x: 2.12, y: -2.3899999}
       - {x: 2.26, y: -2.37}
       - {x: 2.3, y: -2.35}
+--- !u!114 &7567881188157114439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4809987113489608635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60aa0367ca347244a6f61569f5d9cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 5998846369186746594}
+  healthAmountText: {fileID: 746963914}
 --- !u!1 &6711856591515261423
 GameObject:
   m_ObjectHideFlags: 0
