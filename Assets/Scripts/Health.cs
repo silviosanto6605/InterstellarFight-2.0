@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public static GameObject GameInterface;
+    public static GameObject GameInterface; 
     public GameObject heart1;
     public GameObject heart2;
     public GameObject heart3;

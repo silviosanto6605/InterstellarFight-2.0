@@ -16,8 +16,8 @@ public class SpawnSystem : MonoBehaviour
     private void Start()
     {
         EnemyIncrease = true;
-        CanSpawnEnemy = true;
-        enemyCount = 0;
+        CanSpawnEnemy = false;
+        enemyCount = 25;
         WaveCount = enemyCount;
     }
 

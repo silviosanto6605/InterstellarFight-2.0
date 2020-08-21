@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
         }
         
         
-        Debug.Log("SPARATI: "+bullet_shooted.ToString()+ "  MASSIMI:"+maxbulletallowed.ToString());
+        
 
         if (Input.GetKeyDown(KeyCode.F1))
         {
